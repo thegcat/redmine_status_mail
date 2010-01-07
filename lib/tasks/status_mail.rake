@@ -8,6 +8,6 @@ namespace :redmine do
     options[:stale_days] = ENV['stale_days'].to_i if ENV['stale_days']
     options[:login] = ENV['login'] if ENV['login']
     
-    Mailer.status_mails(options)
+    StatusMailer.status_mails(options)
   end
 end
