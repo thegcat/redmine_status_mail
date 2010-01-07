@@ -1,0 +1,2 @@
+<%= render :partial => "issue_list_plain", :locals => { :type => "panic", :issues => @panic_issues, :days => @panic_days } unless @panic_issues.blank? %>
+<%= render :partial => "issue_list_plain", :locals => { :type => "stale", :issues => @stale_issues, :days => @stale_days } unless @stale_issues.blank? %>

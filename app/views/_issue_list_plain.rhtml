@@ -1,0 +1,5 @@
+<%= l("mail_body_status_mail_#{@type}".to_sym, :count => @issues.size, :days => @days) %>:
+
+<% @issues.each do |issue| -%>
+* <%= "#{issue.project} - #{issue.tracker} ##{issue.id}: #{issue.subject}" %>
+<% end -%>
