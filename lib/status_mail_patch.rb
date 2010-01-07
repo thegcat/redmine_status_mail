@@ -17,6 +17,7 @@ module Plugin
           s << ["#{Project.table_name}.status = ?", Project::STATUS_ACTIVE]
           # only those that have already begun
           s << ["#{Issue.table_name}.start_date <= ?", Date.today]
+          # TODO: Rescue from invalid or non-existent login
           s << ["#{Issue.table_name}.assigned_to_id = ?", User.find_by_login(options[:login]).id] if options[:login]
 
           stale_cond = ARCondition.new s.conditions
