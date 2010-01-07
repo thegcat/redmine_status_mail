@@ -3,7 +3,7 @@ require 'dispatcher'
 
 Dispatcher.to_prepare do
   require_dependency 'mailer'
-  require 'patch_redmine_classes'
+  require 'status_mail_patch'
   
   Mailer.send(:include, ::Plugin::StatusMail::Mailer)
 end
