@@ -1,2 +1,6 @@
-<%= render :partial => "issue_list_html", :locals => { :type => "panic", :issues => @panic_issues, :days => @panic_days } unless @panic_issues.nil? %>
-<%= render :partial => "issue_list_html", :locals => { :type => "stale", :issues => @stale_issues, :days => @stale_days } unless @stale_issues.nil? %>
+<% unless @panic_issues.nil? -%>
+  <%= render :partial => "issue_list_html", :locals => { :type => "panic", :issues => @panic_issues, :days => @panic_days } %>
+<% end -%>
+<% unless @stale_issues.nil? -%>
+  <%= render :partial => "issue_list_html", :locals => { :type => "stale", :issues => @stale_issues, :days => @stale_days } %>
+<% end -%>
