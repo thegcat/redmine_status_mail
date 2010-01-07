@@ -45,7 +45,7 @@ module Plugin
       end
 
       module InstanceMethods
-        def status_mails(user, panic_issues, panic_days, stale_issues, stale_days)
+        def status_mail(user, panic_issues, panic_days, stale_issues, stale_days)
           set_language_if_valid user.language
           recipients user.mail
           s = case 
