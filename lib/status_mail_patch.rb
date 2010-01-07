@@ -2,7 +2,7 @@ module Plugin
   module StatusMail
     module Mailer
       module ClassMethods
-        def self.status_mails(options={})
+        def status_mails(options={})
           stale_days = options[:stale_days] || 7
           panic_days = options[:panic_days] || 7
           stale_date = stale_days.days.ago.to_date
