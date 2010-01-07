@@ -1,4 +1,12 @@
 require 'redmine'
+require 'dispatcher'
+
+Dispatcher.to_prepare do
+  require_dependency 'mailer'
+  require 'patch_redmine_classes'
+  
+  Mailer.send(:include, ::Plugin::StatusMail::Mailer)
+end
 
 Redmine::Plugin.register :redmine_status_mail do
   name 'Redmine Status Mail plugin'
