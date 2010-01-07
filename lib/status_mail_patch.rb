@@ -49,8 +49,8 @@ module Plugin
           set_language_if_valid user.language
           recipients user.mail
           s = case 
-          when panic_issues.blank? then l(:mail_subject_status_mail_stale, stale_issues.size)
-          when stale_issues.blank? then l(:mail_subject_status_mail_panic, panic_issues.size)
+          when panic_issues.nil? then l(:mail_subject_status_mail_stale, stale_issues.size)
+          when stale_issues.nil? then l(:mail_subject_status_mail_panic, panic_issues.size)
           else l(:mail_subject_status_mail_full, panic_issues.size, stale_issues.size)
           end
           subject s
